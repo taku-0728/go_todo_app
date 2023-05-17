@@ -3,7 +3,6 @@ package store
 import (
 	"context"
 
-	"github.com/jmoiron/sqlx"
 	"github.com/taku-0728/go_todo_app/entity"
 )
 
@@ -25,7 +24,7 @@ func (r *Repository) AddTask(ctx context.Context, db Execer, t *entity.Task) err
 	return nil
 }
 
-func (r *Repository) ListTasks(ctx context.Context, db *sqlx.DB) (entity.Tasks, error) {
+func (r *Repository) ListTasks(ctx context.Context, db Queryer) (entity.Tasks, error) {
 	tasks := entity.Tasks{}
 	sql := `SELECT
 		id, user_id, title,
