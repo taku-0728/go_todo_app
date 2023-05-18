@@ -5,6 +5,8 @@ import (
 	"regexp"
 	"testing"
 
+	_ "github.com/go-sql-driver/mysql"
+
 	"github.com/DATA-DOG/go-sqlmock"
 	"github.com/google/go-cmp/cmp"
 	"github.com/jmoiron/sqlx"
