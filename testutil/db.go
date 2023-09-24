@@ -47,7 +47,7 @@ func OpenRedisForTest(t *testing.T) *redis.Client {
 		DB:       0, // default database number
 	})
 	if err := client.Ping(context.Background()).Err(); err != nil {
-		t.Fatal("failed to connect redis: %s", err)
+		t.Fatalf("failed to connect redis: %s", err)
 	}
 	return client
 }
